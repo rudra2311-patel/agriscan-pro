@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'screens/home_screen.dart';
+import 'screens/test_screen.dart'; // Your test screen
 import 'utils/constants.dart';
 
 void main() {
@@ -71,7 +72,15 @@ class AgriScanApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
         useMaterial3: true,
       ),
-      home: const HomeScreen(),
+
+      // --- FIX: THIS LINE IS CHANGED TO START THE TEST SCREEN ---
+      initialRoute: '/test', 
+      
+      // Your defined routes
+      routes: {
+        '/': (context) => const HomeScreen(),
+        '/test': (context) => const TestScreen(),
+      },
     );
   }
 }
